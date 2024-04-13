@@ -77,7 +77,7 @@ function ProfilePage() {
           <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.chatResponse}
-              errorElement={<p>Error loading chats!</p>}
+              errorElement={<p>Welcome to The Coda Real Estate</p>}
             >
               {(chatResponse) => <Chat chats={chatResponse.data}/>}
             </Await>

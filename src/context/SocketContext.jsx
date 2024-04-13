@@ -9,13 +9,11 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    // Connect to the server running on port 8800
-    setSocket(io("https://estatebackend.onrender.com"));
+    setSocket(io("http://localhost:4000"));
   }, []);
 
   useEffect(() => {
-    // Emit "newUser" event when currentUser is available
-    currentUser && socket?.emit("newUser", currentUser.id);
+  currentUser && socket?.emit("newUser", currentUser.id);
   }, [currentUser, socket]);
 
   return (
